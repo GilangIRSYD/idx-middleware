@@ -1,0 +1,45 @@
+{
+    "message": "Successfully retrieved broker list",
+    "data": [
+        {
+            "id": 46,
+            "code": "AG",
+            "name": "Kiwoom Sekuritas Indonesia",
+            "permission": "Perantara Pedagang Efek",
+            "group": "Asing",
+            "color": ""
+        },
+        {
+            "id": 90,
+            "code": "AH",
+            "name": "Shinhan Sekuritas Indonesia",
+            "permission": "Penjamin Emisi Efek, Perantara Pedagang Efek",
+            "group": "Asing",
+            "color": ""
+        },
+        {
+            "id": 98,
+            "code": "AI",
+            "name": "UOB Kay Hian Sekuritas",
+            "permission": "Penjamin Emisi Efek, Perantara Pedagang Efek",
+            "group": "Asing",
+            "color": ""
+        },
+        {
+            "id": 96,
+            "code": "AK",
+            "name": "UBS Sekuritas Indonesia",
+            "permission": "Penjamin Emisi Efek, Perantara Pedagang Efek",
+            "group": "Asing",
+            "color": ""
+        },
+        {
+            "id": 43,
+            "code": "BK",
+            "name": "J.P. Morgan Sekuritas Indonesia",
+            "permission": "Penjamin Emisi Efek, Perantara Pedagang Efek",
+            "group": "Asing",
+            "color": ""
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+import {
+  BrokersController,
+  BrokerActionSummaryController,
+  BrokerEmitenDetailController,
+} from "../controllers";
+
+/**
+ * V1 API Router
+ * Routes HTTP requests to appropriate controllers
+ */
+export class V1Router {
+  constructor(
+    private readonly brokersController: BrokersController,
+    private readonly brokerActionSummaryController: BrokerActionSummaryController,
+    private readonly brokerEmitenDetailController: BrokerEmitenDetailController
+  ) {}
+
+  /**
+   * Route handler for V1 API endpoints
+   */
+  async fetch(req: Request): Promise<Response> {
+    const url = new URL(req.url);
+    const pathname = url.pathname;
+
+    // GET /api/v1/brokers - Get list of brokers
+    if (pathname === "/api/v1/brokers" && req.method === "GET") {
+      return this.brokersController.getAllBrokers();
+    }
+
+    // GET /api/v1/broker-action-summary - Get broker activity summary
+    if (pathname === "/api/v1/broker-action-summary" && req.method === "GET") {
+      return this.brokerActionSummaryController.getBrokerActionSummary(req);
+    }
+
+    // GET /api/v1/broker-emiten-detail - Get broker emiten detail
+    if (pathname === "/api/v1/broker-emiten-detail" && req.method === "GET") {
+      return this.brokerEmitenDetailController.getBrokerEmitenDetail(req);
+    }
+
+    return new Response("Endpoint not found", { status: 404 });
+  }
+}

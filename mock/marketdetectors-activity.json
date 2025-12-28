@@ -1,0 +1,105 @@
+{
+    "message": "Successfully retrieved broker activity detail",
+    "data": {
+        "bandar_detector": {
+            "average": 793.98737,
+            "avg": {
+                "accdist": "Big Acc",
+                "amount": 54748720000,
+                "percent": 88.8281,
+                "vol": 689541.44
+            },
+            "avg5": {
+                "accdist": "Big Acc",
+                "amount": 54538228000,
+                "percent": 88.48659,
+                "vol": 686890.4
+            },
+            "broker_accdist": "Dist",
+            "number_broker_buysell": 0,
+            "top1": {
+                "accdist": "Big Acc",
+                "amount": 53275280000,
+                "percent": 86.43749,
+                "vol": 670984
+            },
+            "top3": {
+                "accdist": "Big Acc",
+                "amount": 54853964000,
+                "percent": 88.99886,
+                "vol": 690867
+            },
+            "top5": {
+                "accdist": "Big Acc",
+                "amount": 54853964000,
+                "percent": 88.99886,
+                "vol": 690867
+            },
+            "top10": {
+                "accdist": "Big Acc",
+                "amount": 54853964000,
+                "percent": 88.99886,
+                "vol": 690867
+            },
+            "total_buyer": 2,
+            "total_seller": 2,
+            "value": 61634458000,
+            "volume": 776265
+        },
+        "broker_summary": {
+            "brokers_buy": [
+                {
+                    "blot": "705563",
+                    "blotv": "",
+                    "bval": "3.55909047e+10",
+                    "bvalv": "",
+                    "netbs_broker_code": "YP",
+                    "netbs_buy_avg_price": "501.9457096112723",
+                    "netbs_date": "20251201",
+                    "netbs_stock_code": "KSIX",
+                    "type": "Asing"
+                },
+                {
+                    "blot": "70702",
+                    "blotv": "",
+                    "bval": "2.6043554e+10",
+                    "bvalv": "",
+                    "netbs_broker_code": "YP",
+                    "netbs_buy_avg_price": "3676.7126528564813",
+                    "netbs_date": "20251201",
+                    "netbs_stock_code": "BBRI",
+                    "type": "Asing"
+                }
+            ],
+            "brokers_sell": [
+                {
+                    "netbs_broker_code": "YP",
+                    "netbs_date": "20251201",
+                    "netbs_sell_avg_price": "8415.379850884505",
+                    "netbs_stock_code": "BBCA",
+                    "slot": "-34579",
+                    "slotv": "",
+                    "sval": "-2.91085425e+10",
+                    "svalv": "",
+                    "type": "Asing"
+                },
+                {
+                    "netbs_broker_code": "YP",
+                    "netbs_date": "20251201",
+                    "netbs_sell_avg_price": "2975.9586701643557",
+                    "netbs_stock_code": "ANTM",
+                    "slot": "-50819",
+                    "slotv": "",
+                    "sval": "-1.5157815e+10",
+                    "svalv": "",
+                    "type": "Asing"
+                }
+            ],
+            "symbol": ""
+        },
+        "from": "2025-12-01",
+        "to": "2025-12-01",
+        "broker_code": "YP",
+        "broker_name": "Mirae Asset Sekuritas Indonesia"
+    }
+}

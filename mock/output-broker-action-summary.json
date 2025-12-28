@@ -1,0 +1,29 @@
+{
+  "broker": "YP",
+  "period": {
+    "from": "2025-12-01",
+    "to": "2025-12-01"
+  },
+  "data": [
+    {
+      "emiten": "KSIX",
+      "buy_volume": 705563,
+      "sell_volume": 0,
+      "net_volume": 705563,
+      "buy_value": 35590904700,
+      "sell_value": 0,
+      "net_value": 35590904700,
+      "status": "ACCUMULATION"
+    },
+    {
+      "emiten": "BBCA",
+      "buy_volume": 0,
+      "sell_volume": 34579,
+      "net_volume": -34579,
+      "buy_value": 0,
+      "sell_value": 29108542500,
+      "net_value": -29108542500,
+      "status": "DISTRIBUTION"
+    }
+  ]
+}

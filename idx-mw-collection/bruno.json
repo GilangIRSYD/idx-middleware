@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "idx-mw",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

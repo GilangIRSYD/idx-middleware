@@ -1,0 +1,20 @@
+{
+  "broker": "YP",
+  "emiten": "BBCA",
+  "period": {
+    "from": "2025-12-01",
+    "to": "2025-12-31"
+  },
+  "calendar": [
+    {
+      "date": "2025-12-01",
+      "buy_volume": 0,
+      "sell_volume": 34579,
+      "net_volume": -34579,
+      "buy_value": 0,
+      "sell_value": 29108542500,
+      "net_value": -29108542500,
+      "status": "DISTRIBUTION"
+    }
+  ]
+}
