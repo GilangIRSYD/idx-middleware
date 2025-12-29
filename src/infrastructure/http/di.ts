@@ -3,6 +3,7 @@
  * This is the composition root where we wire all dependencies
  */
 
+import { ApiConfig } from "../../config";
 import {
   StockbitBrokerRepository,
   StockbitBrokerActivityRepository,
@@ -13,9 +14,12 @@ import {
   GetBrokerEmitenDetailUseCase,
 } from "../../application/usecases";
 
+// Create shared API configuration
+const apiConfig = new ApiConfig();
+
 // Repository instances
-export const brokerRepository = new StockbitBrokerRepository();
-export const brokerActivityRepository = new StockbitBrokerActivityRepository();
+export const brokerRepository = new StockbitBrokerRepository(apiConfig);
+export const brokerActivityRepository = new StockbitBrokerActivityRepository(apiConfig);
 
 // Use case instances
 export const getAllBrokersUseCase = new GetAllBrokersUseCase(brokerRepository);

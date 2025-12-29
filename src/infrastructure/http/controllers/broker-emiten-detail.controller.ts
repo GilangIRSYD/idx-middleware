@@ -1,4 +1,6 @@
 import { GetBrokerEmitenDetailUseCase } from "../../../application/usecases";
+import { ValidationError } from "../errors";
+import { errorToResponse } from "../errors";
 
 /**
  * Controller for broker emiten detail endpoint
@@ -14,29 +16,10 @@ export class BrokerEmitenDetailController {
    */
   async getBrokerEmitenDetail(req: Request): Promise<Response> {
     try {
-      const url = new URL(req.url);
-      const broker = url.searchParams.get("broker") || "";
-      const emiten = url.searchParams.get("emiten") || "";
-      const from = url.searchParams.get("from") || "";
-      const to = url.searchParams.get("to") || "";
+      const input = this.extractInput(req);
+      this.validateQueryParams(input);
 
-      // Validate required parameters
-      if (!broker || !emiten || !from || !to) {
-        return Response.json(
-          {
-            error: "Missing required parameters",
-            message: "broker, emiten, from, and to query parameters are required",
-          },
-          { status: 400 }
-        );
-      }
-
-      const result = await this.getBrokerEmitenDetailUseCase.execute({
-        broker,
-        emiten,
-        from,
-        to,
-      });
+      const result = await this.getBrokerEmitenDetailUseCase.execute(input);
 
       return Response.json({
         broker: result.broker,
@@ -45,13 +28,40 @@ export class BrokerEmitenDetailController {
         calendar: result.calendar.map((e) => e.toDTO()),
       });
     } catch (error) {
-      console.error("Error in getBrokerEmitenDetail:", error);
-      return Response.json(
-        {
-          error: "Failed to fetch broker emiten detail",
-          message: error instanceof Error ? error.message : "Unknown error",
-        },
-        { status: 500 }
+      return errorToResponse(error);
+    }
+  }
+
+  /**
+   * Extract input from request URL
+   */
+  private extractInput(req: Request): {
+    broker: string;
+    emiten: string;
+    from: string;
+    to: string;
+  } {
+    const url = new URL(req.url);
+    return {
+      broker: url.searchParams.get("broker") || "",
+      emiten: url.searchParams.get("emiten") || "",
+      from: url.searchParams.get("from") || "",
+      to: url.searchParams.get("to") || "",
+    };
+  }
+
+  /**
+   * Validate required query parameters
+   */
+  private validateQueryParams(input: {
+    broker: string;
+    emiten: string;
+    from: string;
+    to: string;
+  }): void {
+    if (!input.broker || !input.emiten || !input.from || !input.to) {
+      throw new ValidationError(
+        "Missing required query parameters: broker, emiten, from, and to are required"
       );
     }
   }

@@ -1,5 +1,6 @@
-import { IBrokerActivityRepository } from "../../domain/repositories";
+import { IBrokerActivityRepository, type BrokerActivityRaw } from "../../domain/repositories";
 import { EmitenDetail } from "../../domain/entities";
+import { BrokerValidator, DateValidator, StringValidator } from "../../utils/validation";
 
 /**
  * Input DTO for GetBrokerEmitenDetail use case
@@ -25,6 +26,21 @@ export interface BrokerEmitenDetailOutput {
 }
 
 /**
+ * Types for raw broker activity data from API
+ */
+interface BrokerBuyItem {
+  netbs_stock_code: string;
+  blot: string;
+  bval: string;
+}
+
+interface BrokerSellItem {
+  netbs_stock_code: string;
+  slot: string;
+  sval: string;
+}
+
+/**
  * Use case for getting broker emiten detail
  * Orchestrates fetching raw data and transforming it to business entities
  */
@@ -37,18 +53,19 @@ export class GetBrokerEmitenDetailUseCase {
    * Execute the use case
    * @param input - The input parameters
    * @returns Promise resolving to broker emiten detail output
+   * @throws ValidationError if input is invalid
    */
   async execute(input: GetBrokerEmitenDetailInput): Promise<BrokerEmitenDetailOutput> {
+    this.validateInput(input);
+
     const { broker, emiten, from, to } = input;
 
-    // Fetch raw data from repository
     const rawActivity = await this.brokerActivityRepository.getActivityRaw(
       broker,
       from,
       to
     );
 
-    // Transform to business entity
     const detail = this.transformToDetail(rawActivity, emiten);
 
     return {
@@ -59,33 +76,50 @@ export class GetBrokerEmitenDetailUseCase {
     };
   }
 
+  /**
+   * Validate input parameters
+   */
+  private validateInput(input: GetBrokerEmitenDetailInput): void {
+    BrokerValidator.validateBrokerCode(input.broker);
+    StringValidator.validateNonEmpty(input.emiten, "Emiten code");
+    DateValidator.validateDateRange(input.from, input.to);
+  }
+
+  /**
+   * Transform raw broker activity data to emiten detail
+   */
   private transformToDetail(
-    rawActivity: {
-      from: string;
-      broker_summary: {
-        brokers_buy: Array<{ netbs_stock_code: string; blot: string; bval: string } | null>;
-        brokers_sell: Array<{ netbs_stock_code: string; slot: string; sval: string } | null>;
-      };
-    },
+    rawActivity: BrokerActivityRaw,
     emiten: string
   ): EmitenDetail {
-    const buyList = rawActivity.broker_summary.brokers_buy.filter((b): b is { netbs_stock_code: string; blot: string; bval: string } => b !== null);
-    const sellList = rawActivity.broker_summary.brokers_sell.filter((s): s is { netbs_stock_code: string; slot: string; sval: string } => s !== null);
+    const buyList = this.filterNonNullItems<BrokerBuyItem>(
+      rawActivity.broker_summary.brokers_buy
+    );
+    const sellList = this.filterNonNullItems<BrokerSellItem>(
+      rawActivity.broker_summary.brokers_sell
+    );
 
     const buy = buyList.find((x) => x.netbs_stock_code === emiten);
     const sell = sellList.find((x) => x.netbs_stock_code === emiten);
 
-    const buyVol = buy ? Number(buy.blot) : 0;
-    const sellVol = sell ? Math.abs(Number(sell.slot)) : 0;
-    const buyVal = buy ? Number(buy.bval) : 0;
-    const sellVal = sell ? Math.abs(Number(sell.sval)) : 0;
+    const buyVolume = buy ? Number(buy.blot) : 0;
+    const sellVolume = sell ? Math.abs(Number(sell.slot)) : 0;
+    const buyValue = buy ? Number(buy.bval) : 0;
+    const sellValue = sell ? Math.abs(Number(sell.sval)) : 0;
 
     return EmitenDetail.create(
       rawActivity.from,
-      buyVol,
-      sellVol,
-      buyVal,
-      sellVal
+      buyVolume,
+      sellVolume,
+      buyValue,
+      sellValue
     );
+  }
+
+  /**
+   * Filter out null items from the list
+   */
+  private filterNonNullItems<T>(items: Array<T | null>): T[] {
+    return items.filter((item): item is T => item !== null);
   }
 }

@@ -1,5 +1,6 @@
 import { GetAllBrokersUseCase } from "../../../application/usecases";
 import { Broker } from "../../../domain/entities";
+import { errorToResponse } from "../errors";
 
 /**
  * Controller for broker endpoints
@@ -20,14 +21,7 @@ export class BrokersController {
         data: brokers.map((b) => b.toDTO()),
       });
     } catch (error) {
-      console.error("Error in getAllBrokers:", error);
-      return Response.json(
-        {
-          error: "Failed to fetch brokers",
-          message: error instanceof Error ? error.message : "Unknown error",
-        },
-        { status: 500 }
-      );
+      return errorToResponse(error);
     }
   }
 }

@@ -1,4 +1,6 @@
 import { GetBrokerActionSummaryUseCase } from "../../../application/usecases";
+import { ValidationError } from "../errors";
+import { errorToResponse } from "../errors";
 
 /**
  * Controller for broker action summary endpoint
@@ -14,27 +16,10 @@ export class BrokerActionSummaryController {
    */
   async getBrokerActionSummary(req: Request): Promise<Response> {
     try {
-      const url = new URL(req.url);
-      const broker = url.searchParams.get("broker") || "";
-      const from = url.searchParams.get("from") || "";
-      const to = url.searchParams.get("to") || "";
+      const input = this.extractInput(req);
+      this.validateQueryParams(input);
 
-      // Validate required parameters
-      if (!broker || !from || !to) {
-        return Response.json(
-          {
-            error: "Missing required parameters",
-            message: "broker, from, and to query parameters are required",
-          },
-          { status: 400 }
-        );
-      }
-
-      const result = await this.getBrokerActionSummaryUseCase.execute({
-        broker,
-        from,
-        to,
-      });
+      const result = await this.getBrokerActionSummaryUseCase.execute(input);
 
       return Response.json({
         broker: result.broker,
@@ -42,13 +27,29 @@ export class BrokerActionSummaryController {
         data: result.data.map((e) => e.toDTO()),
       });
     } catch (error) {
-      console.error("Error in getBrokerActionSummary:", error);
-      return Response.json(
-        {
-          error: "Failed to fetch broker action summary",
-          message: error instanceof Error ? error.message : "Unknown error",
-        },
-        { status: 500 }
+      return errorToResponse(error);
+    }
+  }
+
+  /**
+   * Extract input from request URL
+   */
+  private extractInput(req: Request): { broker: string; from: string; to: string } {
+    const url = new URL(req.url);
+    return {
+      broker: url.searchParams.get("broker") || "",
+      from: url.searchParams.get("from") || "",
+      to: url.searchParams.get("to") || "",
+    };
+  }
+
+  /**
+   * Validate required query parameters
+   */
+  private validateQueryParams(input: { broker: string; from: string; to: string }): void {
+    if (!input.broker || !input.from || !input.to) {
+      throw new ValidationError(
+        "Missing required query parameters: broker, from, and to are required"
       );
     }
   }
