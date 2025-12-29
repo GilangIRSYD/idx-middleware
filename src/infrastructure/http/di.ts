@@ -7,11 +7,13 @@ import { ApiConfig } from "../../config";
 import {
   StockbitBrokerRepository,
   StockbitBrokerActivityRepository,
+  StockbitBrokerActionCalendarRepository,
 } from "../../infrastructure/repositories";
 import {
   GetAllBrokersUseCase,
   GetBrokerActionSummaryUseCase,
   GetBrokerEmitenDetailUseCase,
+  GetBrokerActionCalendarUseCase,
 } from "../../application/usecases";
 import {
   InMemoryStorage,
@@ -50,6 +52,7 @@ export const rateLimitStorage = new InMemoryStorageWithTTL<number[], string>({
 // Repository instances
 export const brokerRepository = new StockbitBrokerRepository(apiConfig);
 export const brokerActivityRepository = new StockbitBrokerActivityRepository(apiConfig);
+export const brokerActionCalendarRepository = new StockbitBrokerActionCalendarRepository(apiConfig);
 
 // Use case instances
 export const getAllBrokersUseCase = new GetAllBrokersUseCase(brokerRepository);
@@ -58,6 +61,9 @@ export const getBrokerActionSummaryUseCase = new GetBrokerActionSummaryUseCase(
 );
 export const getBrokerEmitenDetailUseCase = new GetBrokerEmitenDetailUseCase(
   brokerActivityRepository
+);
+export const getBrokerActionCalendarUseCase = new GetBrokerActionCalendarUseCase(
+  brokerActionCalendarRepository
 );
 
 // Config use case instances

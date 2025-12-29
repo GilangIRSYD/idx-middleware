@@ -1,0 +1,780 @@
+{
+    "data": {
+        "from": "2025-12-11",
+        "to": "2025-12-19",
+        "data_last_updated": "2025-12-29T16:25:41Z",
+        "price_chart_data": [
+            {
+                "date": "2025-12-11",
+                "time": "00:00",
+                "value": {
+                    "raw": "326",
+                    "formatted": "326"
+                },
+                "datetime_label": "11 Dec"
+            },
+            {
+                "date": "2025-12-12",
+                "time": "00:00",
+                "value": {
+                    "raw": "352",
+                    "formatted": "352"
+                },
+                "datetime_label": "12 Dec"
+            },
+            {
+                "date": "2025-12-15",
+                "time": "00:00",
+                "value": {
+                    "raw": "362",
+                    "formatted": "362"
+                },
+                "datetime_label": "15 Dec"
+            },
+            {
+                "date": "2025-12-16",
+                "time": "00:00",
+                "value": {
+                    "raw": "412",
+                    "formatted": "412"
+                },
+                "datetime_label": "16 Dec"
+            },
+            {
+                "date": "2025-12-17",
+                "time": "00:00",
+                "value": {
+                    "raw": "404",
+                    "formatted": "404"
+                },
+                "datetime_label": "17 Dec"
+            },
+            {
+                "date": "2025-12-18",
+                "time": "00:00",
+                "value": {
+                    "raw": "390",
+                    "formatted": "390"
+                },
+                "datetime_label": "18 Dec"
+            },
+            {
+                "date": "2025-12-19",
+                "time": "00:00",
+                "value": {
+                    "raw": "368",
+                    "formatted": "368"
+                },
+                "datetime_label": "19 Dec"
+            }
+        ],
+        "broker_chart_data": [
+            {
+                "type": "TYPE_CHART_VALUE",
+                "brokers": [
+                    "XL",
+                    "MU",
+                    "YP",
+                    "PD",
+                    "CP"
+                ],
+                "charts": [
+                    {
+                        "broker_code": "CP",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "416230000",
+                                    "formatted": "416.2M"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-8504420200",
+                                    "formatted": "(8.5B)"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-18777713800",
+                                    "formatted": "(18.8B)"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-31103586600",
+                                    "formatted": "(31.1B)"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-14910305400",
+                                    "formatted": "(14.9B)"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-15001227400",
+                                    "formatted": "(15B)"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-16821835400",
+                                    "formatted": "(16.8B)"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "XL",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-4442094400",
+                                    "formatted": "(4.4B)"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-6400436800",
+                                    "formatted": "(6.4B)"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "15333049600",
+                                    "formatted": "15.3B"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "16518105600",
+                                    "formatted": "16.5B"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "29342964000",
+                                    "formatted": "29.3B"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "22863463200",
+                                    "formatted": "22.9B"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "13210184400",
+                                    "formatted": "13.2B"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "MU",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "8264768000",
+                                    "formatted": "8.3B"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "16716978400",
+                                    "formatted": "16.7B"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "49562240800",
+                                    "formatted": "49.6B"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "79374306600",
+                                    "formatted": "79.4B"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "55130000200",
+                                    "formatted": "55.1B"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "55083972600",
+                                    "formatted": "55.1B"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "41653238600",
+                                    "formatted": "41.7B"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "PD",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-20915368200",
+                                    "formatted": "(20.9B)"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-41859711000",
+                                    "formatted": "(41.9B)"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-37345863000",
+                                    "formatted": "(37.3B)"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-34776605200",
+                                    "formatted": "(34.8B)"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-26170669000",
+                                    "formatted": "(26.2B)"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-18311058800",
+                                    "formatted": "(18.3B)"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-21668114600",
+                                    "formatted": "(21.7B)"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "YP",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "6066600200",
+                                    "formatted": "6.1B"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "1641505800",
+                                    "formatted": "1.6B"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "6666785800",
+                                    "formatted": "6.7B"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "13240426600",
+                                    "formatted": "13.2B"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "17343243400",
+                                    "formatted": "17.3B"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "21257051200",
+                                    "formatted": "21.3B"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "25157393600",
+                                    "formatted": "25.2B"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "TYPE_CHART_VOLUME",
+                "brokers": [
+                    "XL",
+                    "MU",
+                    "YP",
+                    "PD",
+                    "CP"
+                ],
+                "charts": [
+                    {
+                        "broker_code": "XL",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-142739",
+                                    "formatted": "(142.7K)"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-202682",
+                                    "formatted": "(202.7K)"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "376765",
+                                    "formatted": "376.8K"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "387782",
+                                    "formatted": "387.8K"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "696991",
+                                    "formatted": "697K"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "532583",
+                                    "formatted": "532.6K"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "272773",
+                                    "formatted": "272.8K"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "MU",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "250287",
+                                    "formatted": "250.3K"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "498525",
+                                    "formatted": "498.5K"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "1397053",
+                                    "formatted": "1.4M"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "2133431",
+                                    "formatted": "2.1M"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "1555574",
+                                    "formatted": "1.6M"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "1555374",
+                                    "formatted": "1.6M"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "1195963",
+                                    "formatted": "1.2M"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "YP",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "181048",
+                                    "formatted": "181K"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "53843",
+                                    "formatted": "53.8K"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "187875",
+                                    "formatted": "187.9K"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "358029",
+                                    "formatted": "358K"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "460310",
+                                    "formatted": "460.3K"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "559538",
+                                    "formatted": "559.5K"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "662550",
+                                    "formatted": "662.5K"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "CP",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "9777",
+                                    "formatted": "9.8K"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-242701",
+                                    "formatted": "(242.7K)"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-522041",
+                                    "formatted": "(522K)"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-824988",
+                                    "formatted": "(825K)"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-438630",
+                                    "formatted": "(438.6K)"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-440954",
+                                    "formatted": "(441K)"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-488952",
+                                    "formatted": "(489K)"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    },
+                    {
+                        "broker_code": "PD",
+                        "chart": [
+                            {
+                                "date": "2025-12-11",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-614865",
+                                    "formatted": "(614.9K)"
+                                },
+                                "datetime_label": "11 Dec"
+                            },
+                            {
+                                "date": "2025-12-12",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-1224154",
+                                    "formatted": "(1.2M)"
+                                },
+                                "datetime_label": "12 Dec"
+                            },
+                            {
+                                "date": "2025-12-15",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-1100963",
+                                    "formatted": "(1.1M)"
+                                },
+                                "datetime_label": "15 Dec"
+                            },
+                            {
+                                "date": "2025-12-16",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-1037752",
+                                    "formatted": "(1M)"
+                                },
+                                "datetime_label": "16 Dec"
+                            },
+                            {
+                                "date": "2025-12-17",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-827932",
+                                    "formatted": "(827.9K)"
+                                },
+                                "datetime_label": "17 Dec"
+                            },
+                            {
+                                "date": "2025-12-18",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-626423",
+                                    "formatted": "(626.4K)"
+                                },
+                                "datetime_label": "18 Dec"
+                            },
+                            {
+                                "date": "2025-12-19",
+                                "time": "00:00",
+                                "value": {
+                                    "raw": "-715760",
+                                    "formatted": "(715.8K)"
+                                },
+                                "datetime_label": "19 Dec"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "date_session_info": "29 Dec 2025"
+    },
+    "message": "Successfully loaded running trade chart"
+}

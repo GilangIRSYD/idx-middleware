@@ -6,6 +6,7 @@
 export const ApiConstants = {
   // Base URLs
   STOCKBIT_BASE_URL: "https://exodus.stockbit.com/findata-view",
+  STOCKBIT_ORDER_TRADE_BASE_URL: "https://exodus.stockbit.com/order-trade",
 
   // Pagination
   DEFAULT_PAGE: 1,
@@ -22,12 +23,14 @@ export const ApiConstants = {
   ENDPOINTS: {
     BROKERS: "/marketdetectors/brokers",
     BROKER_ACTIVITY: (broker: string) => `/marketdetectors/activity/${broker}/detail`,
+    BROKER_ACTION_CALENDAR: (symbol: string) => `/running-trade/chart/${symbol}`,
   } as const,
 
   // Mock file paths
   MOCK_PATHS: {
     BROKERS: "/marketdetectors-brokers",
     BROKER_ACTIVITY: "/marketdetectors-activity",
+    BROKER_ACTION_CALENDAR: "/order-trade-running-trade-chart",
   } as const,
 } as const;
 

@@ -88,4 +88,18 @@ export class ApiConfig {
     });
     return `${this.baseUrl}${ApiConstants.ENDPOINTS.BROKER_ACTIVITY(broker)}?${params}`;
   }
+
+  /**
+   * Create API URL for broker action calendar endpoint
+   */
+  getBrokerActionCalendarUrl(symbol: string, brokers: string[], from: string, to: string): string {
+    const params = new URLSearchParams({
+      from,
+      to,
+    });
+    for (const broker of brokers) {
+      params.append("broker_code", broker);
+    }
+    return `${ApiConstants.STOCKBIT_ORDER_TRADE_BASE_URL}${ApiConstants.ENDPOINTS.BROKER_ACTION_CALENDAR(symbol)}?${params}`;
+  }
 }

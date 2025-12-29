@@ -2,6 +2,7 @@ import {
   BrokersController,
   BrokerActionSummaryController,
   BrokerEmitenDetailController,
+  BrokerActionCalendarController,
   ConfigController,
 } from "../controllers";
 
@@ -14,6 +15,7 @@ export class V1Router {
     private readonly brokersController: BrokersController,
     private readonly brokerActionSummaryController: BrokerActionSummaryController,
     private readonly brokerEmitenDetailController: BrokerEmitenDetailController,
+    private readonly brokerActionCalendarController: BrokerActionCalendarController,
     private readonly configController: ConfigController
   ) {}
 
@@ -37,6 +39,11 @@ export class V1Router {
     // GET /api/v1/broker-emiten-detail - Get broker emiten detail
     if (pathname === "/api/v1/broker-emiten-detail" && req.method === "GET") {
       return this.brokerEmitenDetailController.getBrokerEmitenDetail(req);
+    }
+
+    // GET /api/v1/broker-action-calendar - Get broker action calendar
+    if (pathname === "/api/v1/broker-action-calendar" && req.method === "GET") {
+      return this.brokerActionCalendarController.getBrokerActionCalendar(req);
     }
 
     // POST /api/v1/config/access-token - Set access token

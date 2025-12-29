@@ -9,12 +9,14 @@ import {
   getAllBrokersUseCase,
   getBrokerActionSummaryUseCase,
   getBrokerEmitenDetailUseCase,
+  getBrokerActionCalendarUseCase,
   setAccessTokenUseCase,
   getAccessTokenUseCase,
   deleteAccessTokenUseCase,
   BrokersController,
   BrokerActionSummaryController,
   BrokerEmitenDetailController,
+  BrokerActionCalendarController,
   ConfigController,
   V1Router,
   createServer,
@@ -30,6 +32,9 @@ const brokerActionSummaryController = new BrokerActionSummaryController(
 const brokerEmitenDetailController = new BrokerEmitenDetailController(
   getBrokerEmitenDetailUseCase
 );
+const brokerActionCalendarController = new BrokerActionCalendarController(
+  getBrokerActionCalendarUseCase
+);
 const configController = new ConfigController(
   setAccessTokenUseCase,
   getAccessTokenUseCase,
@@ -41,6 +46,7 @@ const v1Router = new V1Router(
   brokersController,
   brokerActionSummaryController,
   brokerEmitenDetailController,
+  brokerActionCalendarController,
   configController
 );
 

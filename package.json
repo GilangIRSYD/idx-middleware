@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run src/main.ts",
+    "start": "bun --hot run src/main.ts",
     "start:legacy": "bun run src/index.ts"
   },
   "devDependencies": {

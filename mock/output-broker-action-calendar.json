@@ -1,0 +1,362 @@
+{
+  "symbol": "BULL",
+  "brokers": [
+    "XL",
+    "MU",
+    "YP",
+    "PD",
+    "CP"
+  ],
+  "range": {
+    "from": "2025-12-11",
+    "to": "2025-12-19"
+  },
+  "summary": {
+    "total_value": 177833498800,
+    "total_value_formatted": "177.8B",
+    "total_volume": 3874535,
+    "total_volume_formatted": "3.9M",
+    "trend": "accumulation",
+    "strength": "moderate",
+    "dominant_brokers": [
+      "MU",
+      "YP",
+      "XL"
+    ],
+    "distribution_brokers": [
+      "PD",
+      "CP"
+    ],
+    "price_movement": {
+      "from": 326,
+      "to": 368,
+      "change": 42,
+      "change_pct": 12.88
+    },
+    "note": "Moderate accumulation with healthy price appreciation"
+  },
+  "data": [
+    {
+      "date": "2025-12-11",
+      "close_price": 326,
+      "close_price_formatted": "326",
+      "total_value": -10609864400,
+      "total_value_formatted": "(10.6B)",
+      "total_volume": -316492,
+      "total_volume_formatted": "(316.5K)",
+      "signal": {
+        "trend": "distribution",
+        "strength": "moderate",
+        "note": "Selling pressure dominant, early distribution"
+      },
+      "brokers": {
+        "YP": {
+          "value": 6066600200,
+          "value_formatted": "6.1B",
+          "volume": 181048,
+          "volume_formatted": "181K"
+        },
+        "XL": {
+          "value": -4442094400,
+          "value_formatted": "(4.4B)",
+          "volume": -142739,
+          "volume_formatted": "(142.7K)"
+        },
+        "CP": {
+          "value": 416230000,
+          "value_formatted": "416.2M",
+          "volume": 9777,
+          "volume_formatted": "9.8K"
+        },
+        "PD": {
+          "value": -20915368200,
+          "value_formatted": "(20.9B)",
+          "volume": -614865,
+          "volume_formatted": "(614.9K)"
+        },
+        "MU": {
+          "value": 8264768000,
+          "value_formatted": "8.3B",
+          "volume": 250287,
+          "volume_formatted": "250.3K"
+        }
+      }
+    },
+    {
+      "date": "2025-12-12",
+      "close_price": 352,
+      "close_price_formatted": "352",
+      "total_value": -38406083800,
+      "total_value_formatted": "(38.4B)",
+      "total_volume": -1117169,
+      "total_volume_formatted": "(1.1M)",
+      "signal": {
+        "trend": "distribution",
+        "strength": "strong",
+        "note": "Heavy institutional selling pressure"
+      },
+      "brokers": {
+        "YP": {
+          "value": 1641505800,
+          "value_formatted": "1.6B",
+          "volume": 53843,
+          "volume_formatted": "53.8K"
+        },
+        "XL": {
+          "value": -6400436800,
+          "value_formatted": "(6.4B)",
+          "volume": -202682,
+          "volume_formatted": "(202.7K)"
+        },
+        "CP": {
+          "value": -8504420200,
+          "value_formatted": "(8.5B)",
+          "volume": -242701,
+          "volume_formatted": "(242.7K)"
+        },
+        "PD": {
+          "value": -41859711000,
+          "value_formatted": "(41.9B)",
+          "volume": -1224154,
+          "volume_formatted": "(1.2M)"
+        },
+        "MU": {
+          "value": 16716978400,
+          "value_formatted": "16.7B",
+          "volume": 498525,
+          "volume_formatted": "498.5K"
+        }
+      }
+    },
+    {
+      "date": "2025-12-15",
+      "close_price": 362,
+      "close_price_formatted": "362",
+      "total_value": 15438499400,
+      "total_value_formatted": "15.4B",
+      "total_volume": 338689,
+      "total_volume_formatted": "338.7K",
+      "signal": {
+        "trend": "accumulation",
+        "strength": "weak",
+        "note": "Mild accumulation detected"
+      },
+      "brokers": {
+        "YP": {
+          "value": 6666785800,
+          "value_formatted": "6.7B",
+          "volume": 187875,
+          "volume_formatted": "187.9K"
+        },
+        "XL": {
+          "value": 15333049600,
+          "value_formatted": "15.3B",
+          "volume": 376765,
+          "volume_formatted": "376.8K"
+        },
+        "CP": {
+          "value": -18777713800,
+          "value_formatted": "(18.8B)",
+          "volume": -522041,
+          "volume_formatted": "(522K)"
+        },
+        "PD": {
+          "value": -37345863000,
+          "value_formatted": "(37.3B)",
+          "volume": -1100963,
+          "volume_formatted": "(1.1M)"
+        },
+        "MU": {
+          "value": 49562240800,
+          "value_formatted": "49.6B",
+          "volume": 1397053,
+          "volume_formatted": "1.4M"
+        }
+      }
+    },
+    {
+      "date": "2025-12-16",
+      "close_price": 412,
+      "close_price_formatted": "412",
+      "total_value": 43252647000,
+      "total_value_formatted": "43.3B",
+      "total_volume": 1016502,
+      "total_volume_formatted": "1.0M",
+      "signal": {
+        "trend": "accumulation",
+        "strength": "moderate",
+        "note": "Pullback with sustained buying interest"
+      },
+      "brokers": {
+        "YP": {
+          "value": 13240426600,
+          "value_formatted": "13.2B",
+          "volume": 358029,
+          "volume_formatted": "358K"
+        },
+        "XL": {
+          "value": 16518105600,
+          "value_formatted": "16.5B",
+          "volume": 387782,
+          "volume_formatted": "387.8K"
+        },
+        "CP": {
+          "value": -31103586600,
+          "value_formatted": "(31.1B)",
+          "volume": -824988,
+          "volume_formatted": "(825K)"
+        },
+        "PD": {
+          "value": -34776605200,
+          "value_formatted": "(34.8B)",
+          "volume": -1037752,
+          "volume_formatted": "(1M)"
+        },
+        "MU": {
+          "value": 79374306600,
+          "value_formatted": "79.4B",
+          "volume": 2133431,
+          "volume_formatted": "2.1M"
+        }
+      }
+    },
+    {
+      "date": "2025-12-17",
+      "close_price": 404,
+      "close_price_formatted": "404",
+      "total_value": 60735233200,
+      "total_value_formatted": "60.7B",
+      "total_volume": 1446313,
+      "total_volume_formatted": "1.4M",
+      "signal": {
+        "trend": "accumulation",
+        "strength": "moderate",
+        "note": "Pullback with sustained buying interest"
+      },
+      "brokers": {
+        "YP": {
+          "value": 17343243400,
+          "value_formatted": "17.3B",
+          "volume": 460310,
+          "volume_formatted": "460.3K"
+        },
+        "XL": {
+          "value": 29342964000,
+          "value_formatted": "29.3B",
+          "volume": 696991,
+          "volume_formatted": "697K"
+        },
+        "CP": {
+          "value": -14910305400,
+          "value_formatted": "(14.9B)",
+          "volume": -438630,
+          "volume_formatted": "(438.6K)"
+        },
+        "PD": {
+          "value": -26170669000,
+          "value_formatted": "(26.2B)",
+          "volume": -827932,
+          "volume_formatted": "(827.9K)"
+        },
+        "MU": {
+          "value": 55130000200,
+          "value_formatted": "55.1B",
+          "volume": 1555574,
+          "volume_formatted": "1.6M"
+        }
+      }
+    },
+    {
+      "date": "2025-12-18",
+      "close_price": 390,
+      "close_price_formatted": "390",
+      "total_value": 65892200800,
+      "total_value_formatted": "65.9B",
+      "total_volume": 1580118,
+      "total_volume_formatted": "1.6M",
+      "signal": {
+        "trend": "accumulation",
+        "strength": "moderate",
+        "note": "Pullback with sustained buying interest"
+      },
+      "brokers": {
+        "YP": {
+          "value": 21257051200,
+          "value_formatted": "21.3B",
+          "volume": 559538,
+          "volume_formatted": "559.5K"
+        },
+        "XL": {
+          "value": 22863463200,
+          "value_formatted": "22.9B",
+          "volume": 532583,
+          "volume_formatted": "532.6K"
+        },
+        "CP": {
+          "value": -15001227400,
+          "value_formatted": "(15B)",
+          "volume": -440954,
+          "volume_formatted": "(441K)"
+        },
+        "PD": {
+          "value": -18311058800,
+          "value_formatted": "(18.3B)",
+          "volume": -626423,
+          "volume_formatted": "(626.4K)"
+        },
+        "MU": {
+          "value": 55083972600,
+          "value_formatted": "55.1B",
+          "volume": 1555374,
+          "volume_formatted": "1.6M"
+        }
+      }
+    },
+    {
+      "date": "2025-12-19",
+      "close_price": 368,
+      "close_price_formatted": "368",
+      "total_value": 41530866600,
+      "total_value_formatted": "41.5B",
+      "total_volume": 926574,
+      "total_volume_formatted": "926.6K",
+      "signal": {
+        "trend": "accumulation",
+        "strength": "moderate",
+        "note": "Pullback with sustained buying interest"
+      },
+      "brokers": {
+        "YP": {
+          "value": 25157393600,
+          "value_formatted": "25.2B",
+          "volume": 662550,
+          "volume_formatted": "662.5K"
+        },
+        "XL": {
+          "value": 13210184400,
+          "value_formatted": "13.2B",
+          "volume": 272773,
+          "volume_formatted": "272.8K"
+        },
+        "CP": {
+          "value": -16821835400,
+          "value_formatted": "(16.8B)",
+          "volume": -488952,
+          "volume_formatted": "(489K)"
+        },
+        "PD": {
+          "value": -21668114600,
+          "value_formatted": "(21.7B)",
+          "volume": -715760,
+          "volume_formatted": "(715.8K)"
+        },
+        "MU": {
+          "value": 41653238600,
+          "value_formatted": "41.7B",
+          "volume": 1195963,
+          "volume_formatted": "1.2M"
+        }
+      }
+    }
+  ]
+}
