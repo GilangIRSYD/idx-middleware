@@ -1,0 +1,27 @@
+meta {
+  name: Get Access Token
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/api/v1/config/access-token
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+docs {
+  Get the current access token from memory storage.
+  Returns a masked version of the token for security (first 4 and last 4 characters).
+
+  Response example:
+  {
+    "token": "abcd...wxyz",
+    "isSet": true
+  }
+}

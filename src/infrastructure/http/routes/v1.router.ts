@@ -2,6 +2,7 @@ import {
   BrokersController,
   BrokerActionSummaryController,
   BrokerEmitenDetailController,
+  ConfigController,
 } from "../controllers";
 
 /**
@@ -12,7 +13,8 @@ export class V1Router {
   constructor(
     private readonly brokersController: BrokersController,
     private readonly brokerActionSummaryController: BrokerActionSummaryController,
-    private readonly brokerEmitenDetailController: BrokerEmitenDetailController
+    private readonly brokerEmitenDetailController: BrokerEmitenDetailController,
+    private readonly configController: ConfigController
   ) {}
 
   /**
@@ -35,6 +37,21 @@ export class V1Router {
     // GET /api/v1/broker-emiten-detail - Get broker emiten detail
     if (pathname === "/api/v1/broker-emiten-detail" && req.method === "GET") {
       return this.brokerEmitenDetailController.getBrokerEmitenDetail(req);
+    }
+
+    // POST /api/v1/config/access-token - Set access token
+    if (pathname === "/api/v1/config/access-token" && req.method === "POST") {
+      return this.configController.setAccessToken(req);
+    }
+
+    // GET /api/v1/config/access-token - Get access token (masked)
+    if (pathname === "/api/v1/config/access-token" && req.method === "GET") {
+      return this.configController.getAccessToken();
+    }
+
+    // DELETE /api/v1/config/access-token - Delete access token
+    if (pathname === "/api/v1/config/access-token" && req.method === "DELETE") {
+      return this.configController.deleteAccessToken();
     }
 
     return new Response("Endpoint not found", { status: 404 });

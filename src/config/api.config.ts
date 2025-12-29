@@ -4,11 +4,13 @@
  */
 
 import { ApiConstants } from "./constants";
+import type { ConfigStorage } from "../domain/usecases/config.usecase";
 
 export interface ApiConfigOptions {
   baseUrl?: string;
   accessToken?: string;
   useMock?: boolean;
+  configStorage?: ConfigStorage;
 }
 
 /**
@@ -17,15 +19,30 @@ export interface ApiConfigOptions {
  */
 export class ApiConfig {
   readonly baseUrl: string;
-  readonly accessToken: string;
   readonly useMock: boolean;
+  private readonly configStorage?: ConfigStorage;
 
   constructor(options: ApiConfigOptions = {}) {
     this.baseUrl = options.baseUrl ?? ApiConstants.STOCKBIT_BASE_URL;
     this.useMock = options.useMock ?? process.env.USE_MOCK === "true";
+    this.configStorage = options.configStorage;
+  }
 
-    // Only require access token if not using mock mode
-    this.accessToken = options.accessToken ?? this.getAccessTokenFromEnv();
+  /**
+   * Get the access token from storage or environment
+   * Priority: configStorage > environment variable
+   */
+  get accessToken(): string {
+    // Try to get from config storage first
+    if (this.configStorage) {
+      const token = this.configStorage.getAccessToken();
+      if (token) {
+        return token;
+      }
+    }
+
+    // Fall back to environment variable
+    return this.getAccessTokenFromEnv();
   }
 
   private getAccessTokenFromEnv(): string {
@@ -38,7 +55,7 @@ export class ApiConfig {
     if (!token) {
       throw new Error(
         "STOCKBIT_ACCESS_TOKEN environment variable is not set. " +
-          "Please provide a valid access token or set USE_MOCK=true for development."
+          "Please provide a valid access token via API endpoint or set USE_MOCK=true for development."
       );
     }
     return token;

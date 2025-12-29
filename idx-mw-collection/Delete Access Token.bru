@@ -1,0 +1,27 @@
+meta {
+  name: Delete Access Token
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:8000/api/v1/config/access-token
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+docs {
+  Delete the access token from memory storage.
+  After deletion, the app will fall back to environment variable if available.
+
+  Response example:
+  {
+    "success": true,
+    "message": "Access token deleted successfully"
+  }
+}

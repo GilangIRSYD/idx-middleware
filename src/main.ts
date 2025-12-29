@@ -6,14 +6,16 @@
  */
 
 import {
-  brokerRepository,
-  brokerActivityRepository,
   getAllBrokersUseCase,
   getBrokerActionSummaryUseCase,
   getBrokerEmitenDetailUseCase,
+  setAccessTokenUseCase,
+  getAccessTokenUseCase,
+  deleteAccessTokenUseCase,
   BrokersController,
   BrokerActionSummaryController,
   BrokerEmitenDetailController,
+  ConfigController,
   V1Router,
   createServer,
 } from "./infrastructure/http";
@@ -28,12 +30,18 @@ const brokerActionSummaryController = new BrokerActionSummaryController(
 const brokerEmitenDetailController = new BrokerEmitenDetailController(
   getBrokerEmitenDetailUseCase
 );
+const configController = new ConfigController(
+  setAccessTokenUseCase,
+  getAccessTokenUseCase,
+  deleteAccessTokenUseCase
+);
 
 // Wire up router with controllers
 const v1Router = new V1Router(
   brokersController,
   brokerActionSummaryController,
-  brokerEmitenDetailController
+  brokerEmitenDetailController,
+  configController
 );
 
 // Start server

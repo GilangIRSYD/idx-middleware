@@ -1,0 +1,29 @@
+meta {
+  name: Set Access Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/api/v1/config/access-token
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "token": "your_access_token_here"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+docs {
+  Set or update the Stockbit access token in memory storage.
+  The token will be used for API requests to Stockbit endpoints.
+
+  Priority: In-memory storage > Environment variable
+}
