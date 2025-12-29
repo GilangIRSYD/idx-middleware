@@ -426,23 +426,80 @@ export class AppError extends Error {
     public readonly isOperational: boolean = true
   ) {
     super(message);
+    this.name = this.constructor.name;
+  }
+
+  toResponse(): Response {
+    return Response.json(
+      { error: this.name, message: this.message },
+      { status: this.statusCode }
+    );
+  }
+
+  // Static factory methods for common HTTP errors
+  static badRequest(message: string): AppError {
+    return new AppError(message, 400);
+  }
+
+  static unauthorized(message: string = "Unauthorized"): AppError {
+    return new AppError(message, 401);
+  }
+
+  static forbidden(message: string = "Forbidden"): AppError {
+    return new AppError(message, 403);
+  }
+
+  static notFound(resource: string, identifier?: string): AppError {
+    const message = identifier
+      ? `${resource} with identifier '${identifier}' not found`
+      : `${resource} not found`;
+    return new AppError(message, 404);
+  }
+
+  static internal(message: string): AppError {
+    return new AppError(message, 500);
+  }
+
+  static serviceUnavailable(message: string = "Service unavailable"): AppError {
+    return new AppError(message, 503);
   }
 }
 
 // infrastructure/http/errors/error-handler.ts
 export function handleError(error: unknown): Response {
   if (error instanceof AppError) {
-    return Response.json(
-      { error: error.message },
-      { status: error.statusCode }
-    );
+    return error.toResponse();
   }
 
   console.error("Unexpected error:", error);
   return Response.json(
-    { error: "Internal server error" },
+    { error: "InternalServerError", message: "An unknown error occurred" },
     { status: 500 }
   );
+}
+```
+
+**Usage in Controller:**
+```typescript
+async setAccessToken(req: Request): Promise<Response> {
+  try {
+    const body = await req.json();
+
+    if (!body || typeof body.token !== "string") {
+      return AppError.badRequest("Token is required and must be a string").toResponse();
+    }
+
+    const token = body.token.trim();
+
+    if (token.length === 0) {
+      return AppError.badRequest("Token cannot be empty").toResponse();
+    }
+
+    const result = this.setAccessTokenUseCase.execute(token);
+    return Response.json(result, { status: 200 });
+  } catch (error) {
+    return AppError.internal("Failed to set access token").toResponse();
+  }
 }
 ```
 
