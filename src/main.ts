@@ -20,6 +20,8 @@ import {
   ConfigController,
   V1Router,
   createServer,
+  logger,
+  errorHandler,
 } from "./infrastructure/http";
 
 const PORT = parseInt(process.env.PORT || "8000");
@@ -54,6 +56,8 @@ const v1Router = new V1Router(
 const server = createServer({
   port: PORT,
   v1Router,
+  logger,
+  errorHandler,
 });
 
-console.log(`Server running on http://localhost:${server.port}`);
+logger.info(`Server running on http://localhost:${server.port}`);

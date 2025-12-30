@@ -25,6 +25,14 @@ import {
   GetAccessTokenUseCase,
   DeleteAccessTokenUseCase,
 } from "../../domain/usecases/config.usecase";
+import { AppLogger, createLogger } from "../../infrastructure/logger/logger";
+import { ErrorHandler } from "./errors/error-handler";
+
+// Logger - create singleton instance
+export const logger = createLogger();
+
+// Error handler
+export const errorHandler = new ErrorHandler(logger);
 
 // Config storage - must be created before ApiConfig
 const configStorage = new ConfigStorageImpl();
