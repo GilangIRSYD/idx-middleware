@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: http://localhost:8000/api/v1/broker-action-calendar?symbol=BULL&broker_code=XL&broker_code=MU&broker_code=YP&broker_code=PD&broker_code=CP&from=2025-12-11&to=2025-12-19
+  url: {{BASE_URL}}{{V1_ROUTE}}/broker-action-calendar
   body: none
   auth: inherit
 }

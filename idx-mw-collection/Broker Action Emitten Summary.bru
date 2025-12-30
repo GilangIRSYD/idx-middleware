@@ -1,15 +1,16 @@
 meta {
   name: Broker Action Emitten Summary
   type: http
-  seq: 3
+  seq: 6
 }
 
 get {
-  url: http://localhost:8000/api/v1/broker-emiten-detail
+  url: {{BASE_URL}}{{V1_ROUTE}}/broker-emiten-detail
   body: none
   auth: inherit
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }

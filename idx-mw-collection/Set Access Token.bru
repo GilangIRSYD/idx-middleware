@@ -1,11 +1,11 @@
 meta {
   name: Set Access Token
   type: http
-  seq: 1
+  seq: 3
 }
 
 post {
-  url: http://localhost:8000/api/v1/config/access-token
+  url: {{BASE_URL}}{{V1_ROUTE}}/config/access-token
   body: json
   auth: inherit
 }
@@ -24,6 +24,6 @@ settings {
 docs {
   Set or update the Stockbit access token in memory storage.
   The token will be used for API requests to Stockbit endpoints.
-
+  
   Priority: In-memory storage > Environment variable
 }

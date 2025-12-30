@@ -1,11 +1,11 @@
 meta {
   name: Delete Access Token
   type: http
-  seq: 3
+  seq: 7
 }
 
 delete {
-  url: http://localhost:8000/api/v1/config/access-token
+  url: {{BASE_URL}}{{V1_ROUTE}}/config/access-token
   body: none
   auth: inherit
 }
@@ -18,7 +18,7 @@ settings {
 docs {
   Delete the access token from memory storage.
   After deletion, the app will fall back to environment variable if available.
-
+  
   Response example:
   {
     "success": true,
