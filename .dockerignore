@@ -1,0 +1,48 @@
+# Dependencies
+node_modules
+
+# Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git
+.git
+.gitignore
+.github
+
+# Documentation
+README.md
+LICENSE
+CLAUDE.md
+
+# IDE
+.vscode
+.idea
+.editorconfig
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage*
+*.test.ts
+*.spec.ts
+
+# Misc
+*.log
+.DS_Store
+*.swp
+*.swo
+
+# Build artifacts (if any)
+dist
+build
+
+# Mock data (optional - remove if needed in production)
+mock
+
+# Bruno collection (API testing)
+idx-mw-collection

@@ -4,8 +4,17 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun --hot run src/main.ts",
-    "start:legacy": "bun run src/index.ts"
+    "dev": "bun --hot run src/main.ts",
+    "start": "bun run src/main.ts",
+    "build": "bun build src/main.ts --outdir ./dist --target bun",
+    "start:prod": "bun run dist/main.js",
+    "start:legacy": "bun run src/index.ts",
+    "docker:build": "docker build --pull -t idx-stock-api:latest .",
+    "docker:build:version": "docker build --pull -t idx-stock-api:1.0.0 .",
+    "docker:run": "docker run -d -p 8000:8000 --env-file .env idx-stock-api:latest",
+    "docker:stop": "docker stop $$(docker ps -q --filter ancestor=idx-stock-api:latest)",
+    "release": "./build-from-tag.sh",
+    "release:full": "./release.sh"
   },
   "devDependencies": {
     "@types/bun": "latest",
