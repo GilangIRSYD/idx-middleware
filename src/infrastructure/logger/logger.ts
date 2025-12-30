@@ -2,6 +2,22 @@ import type { ILogger, LogEntry, LoggerConfig } from "./types";
 import { LogLevel } from "./types";
 
 /**
+ * Timezone configuration
+ */
+const TIMEZONE = "Asia/Jakarta"; // WIB (UTC+7)
+const TIMEZONE_OFFSET = "+07:00";
+
+/**
+ * Format timestamp to WIB timezone
+ * Returns ISO 8601 format with timezone offset: 2025-12-31T17:30:45.123+07:00
+ */
+function formatTimestamp(date: Date): string {
+  // Get ISO string and replace 'Z' with WIB offset
+  const isoString = date.toISOString();
+  return isoString.replace("Z", TIMEZONE_OFFSET);
+}
+
+/**
  * Parse log level from string or env
  */
 function parseLogLevel(level: string | undefined): LogLevel {
@@ -111,7 +127,7 @@ export class AppLogger implements ILogger {
       level,
       levelName: LogLevel[level],
       message,
-      timestamp: this.config.includeTimestamp ? new Date().toISOString() : "",
+      timestamp: this.config.includeTimestamp ? formatTimestamp(new Date()) : "",
       context: { ...this.baseContext, ...context },
     };
 

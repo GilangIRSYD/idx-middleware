@@ -31,9 +31,11 @@ export function createServer(config: ServerConfig) {
 
       // Health check (bypass request middleware)
       if (url.pathname === "/health") {
+        const now = new Date();
+        const isoWIB = now.toISOString().replace("Z", "+07:00");
         return Response.json({
           status: "ok",
-          timestamp: new Date().toISOString(),
+          timestamp: isoWIB,
         });
       }
 
