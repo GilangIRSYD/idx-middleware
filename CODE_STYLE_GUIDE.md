@@ -28,15 +28,24 @@ src/
 │   │   ├── broker.entity.ts
 │   │   ├── emiten-summary.entity.ts
 │   │   └── emiten-detail.entity.ts
-│   └── repositories/
-│       ├── broker.repository.interface.ts
-│       └── broker-activity.repository.interface.ts
+│   ├── repositories/
+│   │   ├── broker.repository.interface.ts
+│   │   └── broker-activity.repository.interface.ts
+│   ├── storage/          # Storage interfaces (in-memory cache, etc.)
+│   │   ├── storage.interface.ts
+│   │   └── storage.types.ts
+│   └── usecases/          # Use case interfaces (optional)
 ├── infrastructure/      # External concerns
 │   ├── http/
 │   │   ├── controllers/
+│   │   ├── middleware/      # Middleware (nonce, rate-limit, etc.)
 │   │   ├── routes/
+│   │   ├── errors/          # Error classes and handler
 │   │   ├── di.ts
 │   │   └── server.ts
+│   ├── storage/            # Storage implementations (in-memory)
+│   │   ├── in-memory-storage.impl.ts
+│   │   └── config-storage.impl.ts
 │   └── repositories/
 │       ├── stockbit-broker.repository.impl.ts
 │       └── stockbit-broker-activity.repository.impl.ts
@@ -301,6 +310,107 @@ const server = createServer({
 
 ---
 
+## Middleware System
+
+### Overview
+
+Project ini menggunakan composable middleware chain untuk menangani cross-cutting concerns seperti nonce validation, rate limiting, dll.
+
+### Middleware Pattern
+
+Middleware menerima `(req, server, next)` dan bisa:
+- **Call `next()`** - Lanjut ke middleware berikutnya
+- **Return Response** - Short-circuit dan langsung return response
+- **Throw Error** - Error akan di-catch oleh global error handler
+
+### Membuat Middleware Baru
+
+**File:** `src/infrastructure/http/middleware/{feature}-check.middleware.ts`
+
+```typescript
+// middleware-runner.ts
+export type Middleware = (
+  req: Request,
+  server: ServerContext,
+  next: () => Promise<Response>
+) => Promise<Response>;
+
+// {feature}-check.middleware.ts
+export function create{Feature}Middleware(config: { /* options */ }) {
+  return (deps: MiddlewareDependencies): Middleware => {
+    return async (req, server, next): Promise<Response> => {
+      // Your middleware logic here
+
+      // Option 1: Continue to next middleware
+      return next();
+
+      // Option 2: Short-circuit with response
+      // return Response.json({ error: "Custom error" }, { status: 400 });
+
+      // Option 3: Throw error
+      // throw new CustomError("Something went wrong");
+    };
+  };
+}
+```
+
+### Menambah Middleware ke Chain
+
+**File:** `src/infrastructure/http/server.ts`
+
+```typescript
+const middlewareChain = createMiddlewareChain([
+  // 1. Nonce check (replay attack prevention)
+  createNonceMiddleware({ ttl: 5 * 60 * 1000 })(deps),
+
+  // 2. Add your middleware here, e.g.:
+  // createRateLimitMiddleware({ maxRequests: 100, windowMs: 60000 })(deps),
+  // createAuthMiddleware()(deps),
+  // createCorsMiddleware()(deps),
+
+], requestMiddleware);
+```
+
+### Middleware Naming Convention
+
+| Pattern | Example |
+|---------|---------|
+| Feature check | `nonce-check.middleware.ts` |
+| Feature guard | `auth-guard.middleware.ts` |
+| Feature middleware | `rate-limit.middleware.ts` |
+
+### Contoh: Rate Limit Middleware
+
+```typescript
+export function createRateLimitMiddleware(config: { maxRequests: number; windowMs: number }) {
+  return (deps: MiddlewareDependencies): Middleware => {
+    const requests = new Map<string, number[]>();
+
+    return async (req, server, next): Promise<Response> => {
+      const ip = server?.requestIP?.(req)?.address ?? "unknown";
+      const now = Date.now();
+      const windowStart = now - config.windowMs;
+
+      // Clean old requests
+      const timestamps = requests.get(ip) ?? [];
+      const validTimestamps = timestamps.filter(t => t > windowStart);
+
+      if (validTimestamps.length >= config.maxRequests) {
+        throw new RateLimitError("Too many requests");
+      }
+
+      // Add current request
+      validTimestamps.push(now);
+      requests.set(ip, validTimestamps);
+
+      return next();
+    };
+  };
+}
+```
+
+---
+
 ## Best Practices
 
 ### 1. Jangan Hardcode Configuration
@@ -456,12 +566,48 @@ export class AppError extends Error {
     return new AppError(message, 404);
   }
 
+  static unprocessableEntity(message: string): AppError {
+    return new AppError(message, 422);
+  }
+
   static internal(message: string): AppError {
     return new AppError(message, 500);
   }
 
   static serviceUnavailable(message: string = "Service unavailable"): AppError {
     return new AppError(message, 503);
+  }
+}
+
+// Custom error classes for specific use cases
+export class ValidationError extends AppError {
+  constructor(message: string) {
+    super(message, 400);
+    this.name = "ValidationError";
+  }
+}
+
+export class NotFoundError extends AppError {
+  constructor(resource: string, identifier?: string) {
+    const message = identifier
+      ? `${resource} with identifier '${identifier}' not found`
+      : `${resource} not found`;
+    super(message, 404);
+    this.name = "NotFoundError";
+  }
+}
+
+export class MissingNonceError extends AppError {
+  constructor() {
+    super("X-Nonce header is required", 400);
+    this.name = "MissingNonceError";
+  }
+}
+
+export class DuplicateNonceError extends AppError {
+  constructor(nonce: string) {
+    super(`Nonce already used: ${nonce}`, 422);
+    this.name = "DuplicateNonceError";
   }
 }
 
@@ -486,19 +632,20 @@ async setAccessToken(req: Request): Promise<Response> {
     const body = await req.json();
 
     if (!body || typeof body.token !== "string") {
-      return AppError.badRequest("Token is required and must be a string").toResponse();
+      throw new ValidationError("Token is required and must be a string");
     }
 
     const token = body.token.trim();
 
     if (token.length === 0) {
-      return AppError.badRequest("Token cannot be empty").toResponse();
+      throw new ValidationError("Token cannot be empty");
     }
 
     const result = this.setAccessTokenUseCase.execute(token);
     return Response.json(result, { status: 200 });
   } catch (error) {
-    return AppError.internal("Failed to set access token").toResponse();
+    // Error will be caught by server's try-catch and handled by ErrorHandler
+    throw error;
   }
 }
 ```
