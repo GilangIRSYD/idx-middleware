@@ -3,9 +3,12 @@ import crypto from "node:crypto";
 
 /**
  * Generate a unique request ID
+ * Format: REQ-xxxxxxxx (8 hex chars)
  */
 function generateRequestId(): string {
-  return crypto.randomUUID();
+  const randomBytes = crypto.randomBytes(4);
+  const hex = randomBytes.toString("hex");
+  return `REQ-${hex}`;
 }
 
 /**

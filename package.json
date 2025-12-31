@@ -7,7 +7,7 @@
     "dev": "bun --hot run src/main.ts",
     "start": "bun run src/main.ts",
     "build": "bun build src/main.ts --outdir ./dist --target bun",
-    "start:prod": "bun run dist/main.js",
+    "start:prod": "NODE_ENV=production bun run dist/main.js",
     "start:legacy": "bun run src/index.ts",
     "docker:build": "docker build --pull -t idx-stock-api:latest .",
     "docker:build:version": "docker build --pull -t idx-stock-api:1.0.0 .",

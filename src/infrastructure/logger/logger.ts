@@ -18,6 +18,25 @@ function formatTimestamp(date: Date): string {
 }
 
 /**
+ * Format timestamp for pretty print
+ * Returns: 31-12-2025 17:30:45 WIB
+ */
+function formatPrettyTimestamp(date: Date): string {
+  // Convert to WIB
+  const wibDate = new Date(date.toLocaleString("en-US", { timeZone: TIMEZONE }));
+
+  const day = String(wibDate.getDate()).padStart(2, "0");
+  const month = String(wibDate.getMonth() + 1).padStart(2, "0");
+  const year = wibDate.getFullYear();
+
+  const hours = String(wibDate.getHours()).padStart(2, "0");
+  const minutes = String(wibDate.getMinutes()).padStart(2, "0");
+  const seconds = String(wibDate.getSeconds()).padStart(2, "0");
+
+  return `${day}-${month}-${year} ${hours}:${minutes}:${seconds} WIB`;
+}
+
+/**
  * Parse log level from string or env
  */
 function parseLogLevel(level: string | undefined): LogLevel {
@@ -207,6 +226,7 @@ export class AppLogger implements ILogger {
 
   /**
    * Format log entry as pretty print (development)
+   * Format: [LEVEL] TIMESTAMP WIB [REQUEST_ID] MESSAGE
    */
   private formatPretty(entry: LogEntry): string {
     const colors = {
@@ -219,11 +239,11 @@ export class AppLogger implements ILogger {
     const reset = "\x1b[0m";
 
     const levelColor = colors[entry.level] ?? reset;
-    const levelStr = entry.levelName.padEnd(5);
-    const timestamp = entry.timestamp ? `${entry.timestamp} ` : "";
-    const requestId = entry.requestId ? `[${entry.requestId}] ` : "";
+    const levelName = entry.levelName;
+    const timestamp = entry.timestamp ? formatPrettyTimestamp(new Date()) : "";
+    const requestId = entry.requestId ? ` [${entry.requestId}]` : "";
 
-    let output = `${timestamp}${requestId}${levelColor}${levelStr}${reset} ${entry.message}`;
+    let output = `${levelColor}[${levelName}]${reset} [${timestamp}]${requestId} ${entry.message}`;
 
     // Add context
     if (entry.context && Object.keys(entry.context).length > 0) {
