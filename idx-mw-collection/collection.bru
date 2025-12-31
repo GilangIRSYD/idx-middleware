@@ -1,0 +1,6 @@
+script:pre-request {
+  const epoch = Date.now();
+  const nonce =["hKJLSHIUOHASD", epoch, "qwe==="].join(".")
+  bru.setVar("nonce", nonce);
+  
+}

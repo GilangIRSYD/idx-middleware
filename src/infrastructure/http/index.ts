@@ -17,6 +17,7 @@ export {
   cacheStorage,
   sessionStorage,
   rateLimitStorage,
+  nonceStorage,
   logger,
   errorHandler,
 } from "./di";

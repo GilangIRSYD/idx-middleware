@@ -17,6 +17,21 @@ export interface ErrorResponse {
 }
 
 /**
+ * Check if error is an AppError (handles instanceof issues after bundling)
+ */
+function isAppError(error: unknown): error is AppError {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+  const e = error as Record<string, unknown>;
+  return (
+    typeof e.statusCode === "number" &&
+    typeof e.isOperational === "boolean" &&
+    typeof e.name === "string"
+  );
+}
+
+/**
  * Error handler class with logger support
  */
 export class ErrorHandler {
@@ -26,7 +41,7 @@ export class ErrorHandler {
    * Convert error to standardized response
    */
   errorToResponse(error: unknown): Response {
-    if (error instanceof AppError) {
+    if (isAppError(error)) {
       const body: ErrorResponse = {
         error: error.name,
         message: error.message,
@@ -68,7 +83,7 @@ export class ErrorHandler {
  * @deprecated Use ErrorHandler class instead
  */
 export function errorToResponse(error: unknown): Response {
-  if (error instanceof AppError) {
+  if (isAppError(error)) {
     const body: ErrorResponse = {
       error: error.name,
       message: error.message,

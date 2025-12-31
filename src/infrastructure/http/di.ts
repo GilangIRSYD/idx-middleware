@@ -57,6 +57,25 @@ export const rateLimitStorage = new InMemoryStorageWithTTL<number[], string>({
   autoCleanup: true,
 });
 
+/**
+ * Nonce storage for replay attack prevention
+ * Stores request nonces with 5-minute TTL
+ * Auto-cleanup runs every 8 hours
+ */
+export const nonceStorage = new InMemoryStorageWithTTL<{
+  timestamp: number;
+  path: string;
+  method: string;
+  ip: string;
+}, string>({
+  defaultTTL: 5 * 60 * 1000,        // 5 minutes
+  autoCleanup: true,
+  cleanupInterval: 8 * 60 * 60 * 1000,  // 8 hours
+  onExpire: (key: string, value: any) => {
+    logger.debug("Nonce expired", { nonce: key, ...value });
+  },
+});
+
 // Repository instances
 export const brokerRepository = new StockbitBrokerRepository(apiConfig);
 export const brokerActivityRepository = new StockbitBrokerActivityRepository(apiConfig);

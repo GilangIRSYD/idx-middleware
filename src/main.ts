@@ -22,6 +22,7 @@ import {
   createServer,
   logger,
   errorHandler,
+  nonceStorage,
 } from "./infrastructure/http";
 
 const PORT = parseInt(process.env.PORT || "8000");
@@ -58,6 +59,7 @@ const server = createServer({
   v1Router,
   logger,
   errorHandler,
+  nonceStorage,
 });
 
 logger.info(`Server running on http://localhost:${server.port}`);

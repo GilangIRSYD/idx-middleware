@@ -10,6 +10,10 @@ delete {
   auth: inherit
 }
 
+headers {
+  x-nonce: {{nonce}}
+}
+
 settings {
   encodeUrl: true
   timeout: 0
