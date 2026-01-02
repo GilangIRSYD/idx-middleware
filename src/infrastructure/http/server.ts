@@ -5,6 +5,7 @@ import { createRequestMiddleware } from "../logger/middleware";
 import type { IInMemoryStorageWithTTL } from "../../domain/storage/storage.interface";
 import { createMiddlewareChain, type MiddlewareDependencies } from "./middleware/middleware-runner";
 import { createNonceMiddleware } from "./middleware/nonce-check.middleware";
+import { createCorsMiddleware } from "./middleware/cors-middleware";
 
 /**
  * HTTP Server configuration and setup
@@ -42,13 +43,15 @@ export function createServer(config: ServerConfig) {
 
   // Configure middleware chain (add new middleware here!)
   const middlewareChain = createMiddlewareChain([
-    // 1. Nonce check middleware (replay attack prevention)
+    // 1. CORS middleware (must be first for preflight)
+    createCorsMiddleware()(deps),
+
+    // 2. Nonce check middleware (replay attack prevention)
     createNonceMiddleware({ ttl: NONCE_TTL })(deps),
 
     // Add more middleware below, e.g.:
     // createRateLimitMiddleware({ maxRequests: 100, windowMs: 60000 })(deps),
     // createAuthMiddleware()(deps),
-    // createCorsMiddleware()(deps),
 
   ], requestMiddleware);
 
