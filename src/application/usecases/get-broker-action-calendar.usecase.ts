@@ -65,6 +65,14 @@ export interface PriceMovement {
  * Summary data
  */
 export interface CalendarSummary {
+  total_buy_value: number;
+  total_buy_value_formatted: string;
+  total_buy_volume: number;
+  total_buy_volume_formatted: string;
+  total_sell_value: number;
+  total_sell_value_formatted: string;
+  total_sell_volume: number;
+  total_sell_volume_formatted: string;
   total_value: number;
   total_value_formatted: string;
   total_volume: number;
@@ -153,14 +161,27 @@ export class GetBrokerActionCalendarUseCase {
     calendarData: CalendarDateData[],
     brokers: string[]
   ): CalendarSummary {
-    // Calculate total value and volume
-    let totalValue = 0;
-    let totalVolume = 0;
+    // Calculate total buy/sell value and volume
+    let totalBuyValue = 0;
+    let totalBuyVolume = 0;
+    let totalSellValue = 0;
+    let totalSellVolume = 0;
 
     for (const data of calendarData) {
-      totalValue += data.total_value;
-      totalVolume += data.total_volume;
+      for (const brokerData of Object.values(data.brokers)) {
+        if (brokerData.value >= 0) {
+          totalBuyValue += brokerData.value;
+          totalBuyVolume += brokerData.volume;
+        } else {
+          totalSellValue += Math.abs(brokerData.value);
+          totalSellVolume += Math.abs(brokerData.volume);
+        }
+      }
     }
+
+    // Calculate net totals
+    const totalValue = totalBuyValue - totalSellValue;
+    const totalVolume = totalBuyVolume - totalSellVolume;
 
     // Calculate broker totals
     const brokerTotals: Record<string, number> = {};
@@ -203,6 +224,14 @@ export class GetBrokerActionCalendarUseCase {
     );
 
     return {
+      total_buy_value: totalBuyValue,
+      total_buy_value_formatted: this.formatNumber(totalBuyValue),
+      total_buy_volume: totalBuyVolume,
+      total_buy_volume_formatted: this.formatNumber(totalBuyVolume),
+      total_sell_value: totalSellValue,
+      total_sell_value_formatted: this.formatNumber(totalSellValue),
+      total_sell_volume: totalSellVolume,
+      total_sell_volume_formatted: this.formatNumber(totalSellVolume),
       total_value: totalValue,
       total_value_formatted: this.formatNumber(totalValue),
       total_volume: totalVolume,

@@ -12,6 +12,14 @@
     "to": "2025-12-19"
   },
   "summary": {
+    "total_buy_value": 496322314000,
+    "total_buy_value_formatted": "496.3B",
+    "total_buy_volume": 8749723,
+    "total_buy_volume_formatted": "8.7M",
+    "total_sell_value": 318488815200,
+    "total_sell_value_formatted": "318.5B",
+    "total_sell_volume": 4875188,
+    "total_sell_volume_formatted": "4.9M",
     "total_value": 177833498800,
     "total_value_formatted": "177.8B",
     "total_volume": 3874535,
