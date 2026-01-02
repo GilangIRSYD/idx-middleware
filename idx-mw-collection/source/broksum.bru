@@ -1,0 +1,42 @@
+meta {
+  name: broksum
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://exodus.stockbit.com/marketdetectors/DEWA?from=2025-12-29&to=2025-12-30&transaction_type=TRANSACTION_TYPE_NET&market_board=MARKET_BOARD_REGULER&investor_type=INVESTOR_TYPE_ALL&limit=25
+  body: none
+  auth: inherit
+}
+
+params:query {
+  from: 2025-12-29
+  to: 2025-12-30
+  transaction_type: TRANSACTION_TYPE_NET
+  market_board: MARKET_BOARD_REGULER
+  investor_type: INVESTOR_TYPE_ALL
+  limit: 25
+}
+
+headers {
+  Accept-Encoding: gzip, deflate, br, zstd
+  User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:146.0) Gecko/20100101 Firefox/146.0
+  Accept: application/json
+  Accept-Language: en-US,en;q=0.5
+  Referer: https://stockbit.com/
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjU3MDc0NjI3LTg4MWItNDQzZC04OTcyLTdmMmMzOTNlMzYyOSIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZSI6ImNvbnNvbGVnaWxhbmciLCJlbWEiOiJjb25zb2xlLmdpbGFuZ0BnbWFpbC5jb20iLCJmdWwiOiJjb25zb2xlIGdpbGFuZyIsInNlcyI6InRwQWE3M0szSlFTbFVJMFciLCJkdmMiOiI0ZDIxZjdlNjNiNTY1NWZlNzQwMzgyZjY1YWVlYmYzMCIsInVpZCI6NTkyOTM2MCwiY291IjoiSUQifSwiZXhwIjoxNzY3Mzk4MTI1LCJpYXQiOjE3NjczMTE3MjUsImlzcyI6IlNUT0NLQklUIiwianRpIjoiODAyMjBiYjYtYmQ2OS00N2ZhLTg0ZWYtYjE2ZGY1ZmRjMzAxIiwibmJmIjoxNzY3MzExNzI1LCJ2ZXIiOiJ2MSJ9.a1JjEuRfQcz6lENvvZS9RTML1xVxm6oVTeUQ5yt-DyZSaV7YDHne-l6u9AeQcm9mY6bGJCyCMLOcfrFScR0sYCp3mK4X_sKsNdyK9Hj8ZsK3U0ujQ4xoYKyi7nhMhNGTIfzJyzosrLLap0Pet0Os7r-ALOz2i990mofmjoelxEdMA9y1y3zbLNwKAkaK6PJOjec3fhzYsjogFq2lm62x3CvXrfmg9vyEWr6tI_utEs0IbJy_gutfkwJ03A3KjfuI8_NHFc7jSxhK_o0xjN2XtsOSKyoScVrpLqilRylCcxURLtbKvOHkzW5Vk8PcGGR_sjXx2_qGR-dlyc9FjR3-Hg
+  Origin: https://stockbit.com
+  Connection: keep-alive
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-site
+  Priority: u=0
+  Pragma: no-cache
+  Cache-Control: no-cache
+  TE: trailers
+}
+
+settings {
+  encodeUrl: false
+}

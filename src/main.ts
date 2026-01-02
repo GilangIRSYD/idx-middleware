@@ -10,6 +10,7 @@ import {
   getBrokerActionSummaryUseCase,
   getBrokerEmitenDetailUseCase,
   getBrokerActionCalendarUseCase,
+  getEmitenBrokerSummaryUseCase,
   setAccessTokenUseCase,
   getAccessTokenUseCase,
   deleteAccessTokenUseCase,
@@ -17,6 +18,7 @@ import {
   BrokerActionSummaryController,
   BrokerEmitenDetailController,
   BrokerActionCalendarController,
+  EmitenBrokerSummaryController,
   ConfigController,
   V1Router,
   createServer,
@@ -25,7 +27,7 @@ import {
   nonceStorage,
 } from "./infrastructure/http";
 
-const PORT = parseInt(process.env.PORT || "8000");
+const PORT = parseInt(process.env.PORT || "8001");
 
 // Wire up controllers with their dependencies
 const brokersController = new BrokersController(getAllBrokersUseCase);
@@ -37,6 +39,9 @@ const brokerEmitenDetailController = new BrokerEmitenDetailController(
 );
 const brokerActionCalendarController = new BrokerActionCalendarController(
   getBrokerActionCalendarUseCase
+);
+const emitenBrokerSummaryController = new EmitenBrokerSummaryController(
+  getEmitenBrokerSummaryUseCase
 );
 const configController = new ConfigController(
   setAccessTokenUseCase,
@@ -50,12 +55,13 @@ const v1Router = new V1Router(
   brokerActionSummaryController,
   brokerEmitenDetailController,
   brokerActionCalendarController,
+  emitenBrokerSummaryController,
   configController
 );
 
 // Start server
 const server = createServer({
-  port: PORT,
+  port: 8001,
   v1Router,
   logger,
   errorHandler,

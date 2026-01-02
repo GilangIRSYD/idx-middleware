@@ -13,3 +13,7 @@ export {
   type BrokerChart,
   type BrokerChartDataByType,
 } from "./broker-action-calendar.repository.interface";
+export {
+  IEmitenBrokerSummaryRepository,
+  type EmitenBrokerSummaryRaw,
+} from "./emiten-broker-summary.repository.interface";

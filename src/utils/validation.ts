@@ -109,3 +109,29 @@ export class BrokerValidator {
     }
   }
 }
+
+/**
+ * Emiten/Stock symbol validation
+ */
+export class EmitenValidator {
+  /**
+   * Validate emiten symbol format
+   * Assumes emiten symbols are 4-letter uppercase codes (e.g., "BBCA", "DEWA")
+   */
+  static isValidSymbol(symbol: string): boolean {
+    return /^[A-Z]{4}$/.test(symbol);
+  }
+
+  /**
+   * Throw ValidationError if symbol is invalid
+   */
+  static validateSymbol(symbol: string): void {
+    StringValidator.validateNonEmpty(symbol, "Symbol");
+
+    if (!this.isValidSymbol(symbol)) {
+      throw new ValidationError(
+        "Invalid symbol format. Must be 4 uppercase letters (e.g., BBCA, DEWA)"
+      );
+    }
+  }
+}

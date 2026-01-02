@@ -17,3 +17,8 @@ export {
   type CalendarDateData,
   type PriceMovement,
 } from "./get-broker-action-calendar.usecase";
+export {
+  GetEmitenBrokerSummaryUseCase,
+  type GetEmitenBrokerSummaryInput,
+  type EmitenBrokerSummaryOutput,
+} from "./get-emiten-broker-summary.usecase";

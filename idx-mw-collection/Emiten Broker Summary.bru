@@ -1,0 +1,26 @@
+meta {
+  name: Emiten Broker Summary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{BASE_URL}}{{API_ROUTE}}/emiten-broker-summary?symbol=DEWA&from=2025-12-01&to=2025-12-30
+  body: none
+  auth: inherit
+}
+
+params:query {
+  symbol: DEWA
+  from: 2025-12-01
+  to: 2025-12-30
+}
+
+headers {
+  x-nonce: {{nonce}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

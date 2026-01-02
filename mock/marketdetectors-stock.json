@@ -1,0 +1,609 @@
+{
+  "message": "Successfully retrieved market detector data",
+  "data": {
+    "bandar_detector": {
+      "average": 623.38434,
+      "avg": {
+        "accdist": "Big Acc",
+        "amount": 104902630000,
+        "percent": 30.824644,
+        "vol": 1682792.2
+      },
+      "avg5": {
+        "accdist": "Big Acc",
+        "amount": 114223870000,
+        "percent": 33.563602,
+        "vol": 1832318.6
+      },
+      "broker_accdist": "Acc",
+      "number_broker_buysell": -27,
+      "top1": {
+        "accdist": "Big Acc",
+        "amount": 131875590000,
+        "percent": 38.75039,
+        "vol": 2115478
+      },
+      "top3": {
+        "accdist": "Big Acc",
+        "amount": 108144840000,
+        "percent": 31.777336,
+        "vol": 1734802
+      },
+      "top5": {
+        "accdist": "Big Acc",
+        "amount": 92339175000,
+        "percent": 27.132992,
+        "vol": 1481256
+      },
+      "top10": {
+        "accdist": "Normal Acc",
+        "amount": 59425796000,
+        "percent": 17.461706,
+        "vol": 953277
+      },
+      "total_buyer": 28,
+      "total_seller": 55,
+      "value": 340320650000,
+      "volume": 5459243
+    },
+    "broker_summary": {
+      "brokers_buy": [
+        {
+          "blot": "3.433672e+06",
+          "blotv": "8.270912e+08",
+          "bval": "2.033244175e+11",
+          "bvalv": "5.34016946e+11",
+          "netbs_broker_code": "AK",
+          "netbs_buy_avg_price": "645.6566651900057",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "725078",
+          "blotv": "6.697787e+08",
+          "bval": "4.78805515e+10",
+          "bvalv": "4.467774545e+11",
+          "netbs_broker_code": "CC",
+          "netbs_buy_avg_price": "667.052348036747",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Pemerintah"
+        },
+        {
+          "blot": "210452",
+          "blotv": "4.607623e+08",
+          "bval": "1.75411615e+10",
+          "bvalv": "3.093463665e+11",
+          "netbs_broker_code": "XC",
+          "netbs_buy_avg_price": "671.379508479752",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "222951",
+          "blotv": "1.004493e+08",
+          "bval": "1.5413345e+10",
+          "bvalv": "6.766105e+10",
+          "netbs_broker_code": "YB",
+          "netbs_buy_avg_price": "673.5840866984638",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "298821",
+          "blotv": "1.904575e+08",
+          "bval": "1.3586844e+10",
+          "bvalv": "1.25626961e+11",
+          "netbs_broker_code": "BK",
+          "netbs_buy_avg_price": "659.6062691151569",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "176113",
+          "blotv": "4.08029e+07",
+          "bval": "1.2058194e+10",
+          "bvalv": "2.7886215e+10",
+          "netbs_broker_code": "AG",
+          "netbs_buy_avg_price": "683.4370841288242",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "132306",
+          "blotv": "8.20564e+07",
+          "bval": "9.825118e+09",
+          "bvalv": "5.57568335e+10",
+          "netbs_broker_code": "KK",
+          "netbs_buy_avg_price": "679.4940248414505",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "106514",
+          "blotv": "3.16453e+07",
+          "bval": "7.4286945e+09",
+          "bvalv": "2.16673985e+10",
+          "netbs_broker_code": "TP",
+          "netbs_buy_avg_price": "684.6956262067353",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "42865",
+          "blotv": "1.121608e+08",
+          "bval": "4.160021e+09",
+          "bvalv": "7.6239615e+10",
+          "netbs_broker_code": "NI",
+          "netbs_buy_avg_price": "679.7349430460553",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Pemerintah"
+        },
+        {
+          "blot": "5558",
+          "blotv": "3.94127e+07",
+          "bval": "1.807163e+09",
+          "bvalv": "2.71343485e+10",
+          "netbs_broker_code": "XA",
+          "netbs_buy_avg_price": "688.4671311531562",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "16859",
+          "blotv": "8.8683e+06",
+          "bval": "1.331292e+09",
+          "bvalv": "6.0656505e+09",
+          "netbs_broker_code": "HP",
+          "netbs_buy_avg_price": "683.9699265924698",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "14683",
+          "blotv": "5.2021e+06",
+          "bval": "1.1670475e+09",
+          "bvalv": "3.5416145e+09",
+          "netbs_broker_code": "CD",
+          "netbs_buy_avg_price": "680.8047711501124",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "16103",
+          "blotv": "1.8652e+06",
+          "bval": "1.080723e+09",
+          "bvalv": "1.247671e+09",
+          "netbs_broker_code": "RO",
+          "netbs_buy_avg_price": "668.9207591679176",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "17873",
+          "blotv": "5.1969e+06",
+          "bval": "1.0524275e+09",
+          "bvalv": "3.347981e+09",
+          "netbs_broker_code": "FS",
+          "netbs_buy_avg_price": "644.2265581404299",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "10800",
+          "blotv": "2.3e+06",
+          "bval": "7.009e+08",
+          "bvalv": "1.5385e+09",
+          "netbs_broker_code": "BF",
+          "netbs_buy_avg_price": "668.9130434782609",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "9673",
+          "blotv": "980400",
+          "bval": "6.50052e+08",
+          "bvalv": "6.58829e+08",
+          "netbs_broker_code": "KZ",
+          "netbs_buy_avg_price": "672.000203998368",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "4317",
+          "blotv": "4.2822e+06",
+          "bval": "2.956415e+08",
+          "bvalv": "2.914259e+09",
+          "netbs_broker_code": "BR",
+          "netbs_buy_avg_price": "680.5518191583766",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "4002",
+          "blotv": "801000",
+          "bval": "2.806925e+08",
+          "bvalv": "5.49197e+08",
+          "netbs_broker_code": "DU",
+          "netbs_buy_avg_price": "685.6392009987516",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "1616",
+          "blotv": "3.717e+06",
+          "bval": "1.596925e+08",
+          "bvalv": "2.525687e+09",
+          "netbs_broker_code": "LS",
+          "netbs_buy_avg_price": "679.4960990045736",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "2395",
+          "blotv": "1.8855e+06",
+          "bval": "1.561225e+08",
+          "bvalv": "1.28452e+09",
+          "netbs_broker_code": "IU",
+          "netbs_buy_avg_price": "681.2622646512862",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "2590",
+          "blotv": "5.9158e+06",
+          "bval": "1.43472e+08",
+          "bvalv": "3.8813915e+09",
+          "netbs_broker_code": "ES",
+          "netbs_buy_avg_price": "656.1059366442408",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "1656",
+          "blotv": "1.3666e+06",
+          "bval": "1.0921e+08",
+          "bvalv": "9.29576e+08",
+          "netbs_broker_code": "SH",
+          "netbs_buy_avg_price": "680.210741987414",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "718",
+          "blotv": "136400",
+          "bval": "5.6461e+07",
+          "bvalv": "9.7627e+07",
+          "netbs_broker_code": "RB",
+          "netbs_buy_avg_price": "715.7404692082112",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Asing"
+        },
+        {
+          "blot": "646",
+          "blotv": "100600",
+          "bval": "4.4037e+07",
+          "bvalv": "6.8402e+07",
+          "netbs_broker_code": "TF",
+          "netbs_buy_avg_price": "679.9403578528827",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        },
+        {
+          "blot": "500",
+          "blotv": "130000",
+          "bval": "3.4655e+07",
+          "bvalv": "8.85e+07",
+          "netbs_broker_code": "MU",
+          "netbs_buy_avg_price": "680.7692307692307",
+          "netbs_date": "20251229",
+          "netbs_stock_code": "DEWA",
+          "type": "Lokal"
+        }
+      ],
+      "brokers_sell": [
+        {
+          "netbs_broker_code": "LG",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "668.8106992489124",
+          "netbs_stock_code": "DEWA",
+          "slot": "-1.318194e+06",
+          "slotv": "1.926939e+08",
+          "sval": "-8.7901148e+10",
+          "svalv": "1.28875742e+11",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "SQ",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "669.4423499051862",
+          "netbs_stock_code": "DEWA",
+          "slot": "-563195",
+          "slotv": "1.787187e+08",
+          "sval": "-3.6811598e+10",
+          "svalv": "1.196418665e+11",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "XL",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "663.1485253303541",
+          "netbs_stock_code": "DEWA",
+          "slot": "-753011",
+          "slotv": "1.2233011e+09",
+          "sval": "-3.62024795e+10",
+          "svalv": "8.112303205e+11",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "SF",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "670.7996873394035",
+          "netbs_stock_code": "DEWA",
+          "slot": "-405057",
+          "slotv": "5.09818e+07",
+          "sval": "-2.72029345e+10",
+          "svalv": "3.41985755e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "CP",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "668.6701491683591",
+          "netbs_stock_code": "DEWA",
+          "slot": "-370261",
+          "slotv": "1.800717e+08",
+          "sval": "-2.3864927e+10",
+          "svalv": "1.204085705e+11",
+          "type": "Asing"
+        },
+        {
+          "netbs_broker_code": "AZ",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "640.4531830269974",
+          "netbs_stock_code": "DEWA",
+          "slot": "-334052",
+          "slotv": "1.358204e+08",
+          "sval": "-1.77780295e+10",
+          "svalv": "8.69866075e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "KI",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "677.1255291127165",
+          "netbs_stock_code": "DEWA",
+          "slot": "-207297",
+          "slotv": "3.69014e+07",
+          "sval": "-1.42526375e+10",
+          "svalv": "2.498688e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "AI",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "652.2638420572785",
+          "netbs_stock_code": "DEWA",
+          "slot": "-176555",
+          "slotv": "2.76404e+07",
+          "sval": "-1.1240356e+10",
+          "svalv": "1.80288335e+10",
+          "type": "Asing"
+        },
+        {
+          "netbs_broker_code": "IF",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "678.1729495935358",
+          "netbs_stock_code": "DEWA",
+          "slot": "-150598",
+          "slotv": "3.26228e+07",
+          "sval": "-1.028477e+10",
+          "svalv": "2.21239005e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "EP",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "667.7766660795261",
+          "netbs_stock_code": "DEWA",
+          "slot": "-122833",
+          "slotv": "4.88242e+07",
+          "sval": "-7.63284e+09",
+          "svalv": "3.26036615e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "DR",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "661.0630899064903",
+          "netbs_stock_code": "DEWA",
+          "slot": "-104999",
+          "slotv": "5.48392e+07",
+          "sval": "-6.4318105e+09",
+          "svalv": "3.6252171e+10",
+          "type": "Asing"
+        },
+        {
+          "netbs_broker_code": "GR",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "669.5054794065177",
+          "netbs_stock_code": "DEWA",
+          "slot": "-92694",
+          "slotv": "4.51235e+07",
+          "sval": "-6.190089e+09",
+          "svalv": "3.02104305e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "DX",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "655.8977134553219",
+          "netbs_stock_code": "DEWA",
+          "slot": "-90347",
+          "slotv": "1.34876e+07",
+          "sval": "-5.857474e+09",
+          "svalv": "8.846486e+09",
+          "type": "Pemerintah"
+        },
+        {
+          "netbs_broker_code": "OD",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "658.0010733457449",
+          "netbs_stock_code": "DEWA",
+          "slot": "-97449",
+          "slotv": "7.36948e+07",
+          "sval": "-5.1689385e+09",
+          "svalv": "4.84912575e+10",
+          "type": "Pemerintah"
+        },
+        {
+          "netbs_broker_code": "ZP",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "674.7899851209219",
+          "netbs_stock_code": "DEWA",
+          "slot": "-50153",
+          "slotv": "9.36886e+07",
+          "sval": "-4.449931e+09",
+          "svalv": "6.3220129e+10",
+          "type": "Asing"
+        },
+        {
+          "netbs_broker_code": "DH",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "667.5811400099815",
+          "netbs_stock_code": "DEWA",
+          "slot": "-56663",
+          "slotv": "2.44454e+07",
+          "sval": "-3.764382e+09",
+          "svalv": "1.6319288e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "BQ",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "659.0330201789983",
+          "netbs_stock_code": "DEWA",
+          "slot": "-56058",
+          "slotv": "3.5978e+07",
+          "sval": "-3.324802e+09",
+          "svalv": "2.371069e+10",
+          "type": "Asing"
+        },
+        {
+          "netbs_broker_code": "PC",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "618.1739577253927",
+          "netbs_stock_code": "DEWA",
+          "slot": "-54667",
+          "slotv": "7.8818e+06",
+          "sval": "-3.2237855e+09",
+          "svalv": "4.8723235e+09",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "PD",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "662.108455183117",
+          "netbs_stock_code": "DEWA",
+          "slot": "-86494",
+          "slotv": "1.97169e+08",
+          "sval": "-3.2166945e+09",
+          "svalv": "1.30547262e+11",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "IN",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "656.167982044182",
+          "netbs_stock_code": "DEWA",
+          "slot": "-48564",
+          "slotv": "8.1979e+06",
+          "sval": "-3.147292e+09",
+          "svalv": "5.3791995e+09",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "BB",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "716.5792105263158",
+          "netbs_stock_code": "DEWA",
+          "slot": "-38000",
+          "slotv": "3.8e+06",
+          "sval": "-2.723001e+09",
+          "svalv": "2.723001e+09",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "YP",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "669.8494027743097",
+          "netbs_stock_code": "DEWA",
+          "slot": "-83266",
+          "slotv": "5.670888e+08",
+          "sval": "-2.572214e+09",
+          "svalv": "3.79864094e+11",
+          "type": "Asing"
+        },
+        {
+          "netbs_broker_code": "SS",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "680.478154251417",
+          "netbs_stock_code": "DEWA",
+          "slot": "-32887",
+          "slotv": "5.32987e+07",
+          "sval": "-2.561901e+09",
+          "svalv": "3.6268601e+10",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "PF",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "605.9285714285714",
+          "netbs_stock_code": "DEWA",
+          "slot": "-40768",
+          "slotv": "4.2e+06",
+          "sval": "-2.461856e+09",
+          "svalv": "2.5449e+09",
+          "type": "Lokal"
+        },
+        {
+          "netbs_broker_code": "YJ",
+          "netbs_date": "20251229",
+          "netbs_sell_avg_price": "674.5142788310076",
+          "netbs_stock_code": "DEWA",
+          "slot": "-40936",
+          "slotv": "4.31688e+07",
+          "sval": "-2.110697e+09",
+          "svalv": "2.9117972e+10",
+          "type": "Lokal"
+        }
+      ],
+      "symbol": "DEWA"
+    },
+    "from": "2025-12-29",
+    "to": "2025-12-30"
+  }
+}

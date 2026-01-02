@@ -102,4 +102,19 @@ export class ApiConfig {
     }
     return `${ApiConstants.STOCKBIT_ORDER_TRADE_BASE_URL}${ApiConstants.ENDPOINTS.BROKER_ACTION_CALENDAR(symbol)}?${params}`;
   }
+
+  /**
+   * Create API URL for emiten broker summary endpoint
+   */
+  getEmitenBrokerSummaryUrl(symbol: string, from: string, to: string): string {
+    const params = new URLSearchParams({
+      from,
+      to,
+      transaction_type: ApiConstants.TRANSACTION_TYPE,
+      market_board: "MARKET_BOARD_REGULER",
+      investor_type: ApiConstants.INVESTOR_TYPE,
+      limit: "25",
+    });
+    return `${this.baseUrl}${ApiConstants.ENDPOINTS.EMITEN_BROKER_SUMMARY(symbol)}?${params}`;
+  }
 }
