@@ -61,7 +61,7 @@ const v1Router = new V1Router(
 
 // Start server
 const server = createServer({
-  port: 8001,
+  port: PORT,
   v1Router,
   logger,
   errorHandler,
