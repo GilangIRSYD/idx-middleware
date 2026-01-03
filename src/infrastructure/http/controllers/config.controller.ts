@@ -44,21 +44,51 @@ export class ConfigController {
 
   /**
    * GET /api/v1/config/access-token
-   * Get the current access token (masked for security)
+   * Get the current access token (masked for security) with decoded JWT info
    */
   async getAccessToken(): Promise<Response> {
     try {
       const result = this.getAccessTokenUseCase.execute();
 
+      if (!result.token) {
+        return Response.json(
+          {
+            token: null,
+            isSet: false,
+          },
+          { status: 200 }
+        );
+      }
+
       // Mask the token for security - only show first and last 4 characters
-      const maskedToken = result.token
-        ? `${result.token.slice(0, 4)}...${result.token.slice(-4)}`
-        : null;
+      const maskedToken = `${result.token.slice(0, 4)}...${result.token.slice(-4)}`;
+
+      // Decode JWT payload (second part of the token)
+      const parts = result.token.split(".");
+      let profileToken = null;
+      let exp = null;
+      let iat = null;
+
+      if (parts.length === 3) {
+        try {
+          // Decode base64url payload
+          const payload = JSON.parse(
+            Buffer.from(parts[1], "base64url").toString("utf-8")
+          );
+          profileToken = payload.data?.ful || null;
+          exp = payload.exp || null;
+          iat = payload.iat || null;
+        } catch {
+          // Ignore decode errors
+        }
+      }
 
       return Response.json(
         {
           token: maskedToken,
-          isSet: result.token !== null,
+          profile_token: profileToken,
+          exp: exp,
+          iat: iat,
         },
         { status: 200 }
       );

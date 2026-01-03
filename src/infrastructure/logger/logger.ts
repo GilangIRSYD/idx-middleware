@@ -57,7 +57,8 @@ function getDefaultConfig(): LoggerConfig {
   const isDevelopment = process.env.NODE_ENV !== "production";
   return {
     level: parseLogLevel(process.env.LOG_LEVEL),
-    pretty: isDevelopment,
+    // pretty: isDevelopment, 
+    pretty: true, 
     includeTimestamp: true,
     includeStackTrace: isDevelopment,
   };
